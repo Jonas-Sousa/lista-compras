@@ -74,4 +74,16 @@ const exibirItens = () => {
         })
     })
 
+    const deletarObjetos = document.querySelectorAll('.deletar')
+    
+    deletarObjetos.forEach( (i) => {
+        i.addEventListener('click', (evento) => {
+            let valorDoElemento = evento.target.parentElement.parentElement.getAttribute('data-value')
+            listaDeItens.splice(valorDoElemento, 1)
+            exibirItens()
+            
+        })
+    })
+
+
 }
